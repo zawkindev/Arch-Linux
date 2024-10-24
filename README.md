@@ -192,16 +192,16 @@ Odatda `/` sifatida belgilangan asosiy bo'lim fayl tizimining ildizidir va barch
 Masalan, Arch Linuxda /dev/sda3 bo'limi mount qilinayotgan yangi fayl tizimining ildizi bo'lib xizmat qiluvchi /mnt directorysiga mountlanadi. EFI tizim bo'limi bo'lgan /dev/sda1 bo'limi /mnt/boot/EFI directorysiga mountlanadi, bu EFI yuklash fayllari saqlanadigan joydir. Swap bo'limi bo'lgan /dev/sda2 bo'limi yetarli RAM mavjud bo'lmaganda ma'lumotlarni vaqtincha saqlash uchun ishlatiladigan swap fayl tizimiga mountlanadi.
 
 #### /dev/sda1 mountlash
-/mnt jildi ichida boot/EFI jildini ochamiz:
+/mnt jildi ichida boot/efi jildini ochamiz:
 
 ```bash
-mkdir -p /mnt/boot/EFI
+mkdir -p /mnt/boot/efi
 ```
 
 Bu buyruq operatsion tizimni yuklash uchun zarur bo'lgan boot loader va boshqa tizim fayllarini saqlash uchun zarur bo'lgan EFI tizimi bo'limi uchun directory yaratadi. `-p` opsiyasi, agar ular allaqachon mavjud bo'lmasa, asosiy directorylarni yaratish uchun ham ishlatiladi.
 
 ```bash
-mount /dev/sda1 /mnt/boot/EFI
+mount /dev/sda1 /mnt/boot/efi
 ```
 
 Buyrug'i EFI System bo'limini yangi yaratilgan directoryga mountlash uchun ishlatiladi. Bu operatsion tizimga o'rnatish jarayonida va tizim o'rnatilgandan keyin EFI tizimi bo'limidagi saqlash joyiga kirish va undan foydalanish imkonini beradi.
@@ -228,7 +228,7 @@ Mounlash jarayoni tugaganidan keyin l`sblk` buyru'gi bilan teskhirib ko'rsangiz 
 root@archiso ~ # lsblk
 NAME    MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINTS
 sda       8:0    1 476.9G  0 disk
-├─sda1    8:1    1   512M  0 part /mnt/boot/EFI
+├─sda1    8:1    1   512M  0 part /mnt/boot/efi
 ├─sda2    8:2    1     4G  0 part [SWAP]
 └─sda3    8:3    1 459.9G  0 part /mnt
 sr0      11:0    1 779.3M  0 rom /run/archiso/bootmnt
